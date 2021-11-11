@@ -24,7 +24,8 @@ pipeline {
                      sourcePattern: '**/src/main/java'
               warnings consoleParsers: [[parserName: 'Maven'], [parserName: 'Java']]
               script {
-                if ( env.BRANCH_NAME == 'master' )
+              echo "env.BRANCH_NAME:" + env.BRANCH_NAME
+                if ( env.BRANCH_NAME == 'main' )
                 {
                   mavenBuild( "jdk11", "deploy" )
                 }
