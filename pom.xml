@@ -8,7 +8,7 @@
   <name>Jetty :: Quiche native library</name>
   <url>https://github.com/jetty-project/jetty-quiche-native</url>
   <description>
-    The Quiche native library used by the Jetty project
+    The Cloudflare Quiche library native builds used by the Jetty project
   </description>
 
   <properties>
