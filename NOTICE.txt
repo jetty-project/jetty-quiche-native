@@ -1,0 +1,5 @@
+The Cloudflare Quiche library native builds used by the Jetty project.
+Copyright (C) 1995-2021, Mort Bay Consulting Pty Ltd and others.
+
+This product includes software developed at Cloudflare, Inc.
+Copyright (C) 2018-2019, Cloudflare, Inc.
