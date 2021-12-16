@@ -6,11 +6,11 @@ This project is providing the native builds of the Cloudflare Quiche (https://gi
 
 ## Current targets
  - Linux amd64
- - Macos ARMv8
+ - Macos aarch64
  - Macos amd64
  - Windows amd64
 
-## How quiche was checked out and built
+## How Quiche was checked out and built
 ```
 git clone --recursive https://github.com/cloudflare/quiche 0.10.0
 cd 0.10.0

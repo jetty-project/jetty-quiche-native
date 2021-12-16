@@ -24,6 +24,6 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-module org.mortbay.jetty.quic.libquiche
+module org.mortbay.jetty.quiche
 {
 }
