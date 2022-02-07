@@ -4,7 +4,7 @@
 
   <groupId>org.mortbay.jetty.quiche</groupId>
   <artifactId>jetty-quiche-native</artifactId>
-  <version>0.11.0.2-SNAPSHOT</version>
+  <version>0.11.0.2</version>
   <name>Jetty :: Quiche Native Library</name>
   <url>https://github.com/jetty-project/jetty-quiche-native</url>
   <description>
@@ -28,7 +28,7 @@
     <connection>scm:git:git://github.com/jetty-project/jetty-quiche-native.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/jetty-project/jetty-quiche-native.git</developerConnection>
     <url>https://github.com/jetty-project/jetty-quiche-native</url>
-    <tag>HEAD</tag>
+    <tag>jetty-quiche-native-0.11.0.2</tag>
   </scm>
 
   <distributionManagement>
