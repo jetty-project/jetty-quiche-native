@@ -4,7 +4,7 @@
 
   <groupId>org.mortbay.jetty.quiche</groupId>
   <artifactId>jetty-quiche-native</artifactId>
-  <version>0.13.0.1-SNAPSHOT</version>
+  <version>0.15.0-SNAPSHOT</version>
   <name>Jetty :: Quiche Native Library</name>
   <url>https://github.com/jetty-project/jetty-quiche-native</url>
   <description>
