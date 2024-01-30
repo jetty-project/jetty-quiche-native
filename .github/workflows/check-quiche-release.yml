@@ -24,7 +24,7 @@ jobs:
           if [ $LAST_TAG != $CURRENT_QUICHE_VERSION ] ; then
             if gh issue list --search "Quiche $LAST_TAG" --json title | jq -e ". == []" ; then
               echo "current quiche version $CURRENT_QUICHE_VERSION is not the same as last tag $LAST_TAG create issue"
-              #gh issue create -t "Quiche $LAST_TAG" -b "Update to Quiche $LAST_TAG"
+              gh issue create -t "Quiche $LAST_TAG" -b "Update to Quiche $LAST_TAG"
             else
               echo "current quiche version $CURRENT_QUICHE_VERSION is not the same as last tag $LAST_TAG but issue exist"
             fi            
