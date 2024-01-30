@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Get Quiche Release
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}        
         run: |
           set -x
           gh release list --repo cloudflare/quiche -L 1
