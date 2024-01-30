@@ -15,3 +15,5 @@ jobs:
           set -x
           LAST_TAG=$(gh release view -R cloudflare/quiche --json tagName --jq '.tagName')
           echo $LAST_TAG
+          CURRENT_QUICHE_VERSION=$(grep -A1 "## Current quiche version" README.md)
+          echo $CURRENT_QUICHE_VERSION
