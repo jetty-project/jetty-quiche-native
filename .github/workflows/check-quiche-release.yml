@@ -23,6 +23,7 @@ jobs:
           echo $CURRENT_QUICHE_VERSION
           if [ $LAST_TAG != $CURRENT_QUICHE_VERSION ] ; then
             echo "current quiche version $CURRENT_QUICHE_VERSION is not the same as last tag $LAST_TAG"
+            gh issue create -t "Quiche $LAST_TAG" -b "Update to Quiche $LAST_TAG"
           else
             echo "current quiche version $CURRENT_QUICHE_VERSION is same as last tag $LAST_TAG"
           fi
