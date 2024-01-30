@@ -13,5 +13,5 @@ jobs:
           GH_TOKEN: ${{ github.token }}        
         run: |
           set -x
-          LAST_TAG= $(gh release view -R cloudflare/quiche --json tagName --jq '.tagName')
+          LAST_TAG=$(gh release view -R cloudflare/quiche --json tagName --jq '.tagName')
           echo $LAST_TAG
