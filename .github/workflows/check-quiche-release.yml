@@ -1,9 +1,9 @@
 name: Check Quiche release
 
-on: 
-  #workflow_dispatch:
+on:
   schedule:
-    - cron:  '*/15 * * * *'
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
  
 jobs:
   get-release:
