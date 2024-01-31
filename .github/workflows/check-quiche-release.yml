@@ -25,6 +25,8 @@ jobs:
           echo $CURRENT_QUICHE_VERSION
           if [ $LAST_TAG != $CURRENT_QUICHE_VERSION ] ; then
             if gh issue list --search "Quiche $LAST_TAG" --json title | jq -e ". == []" ; then
+            ISSUE_TITLE="Bump Quiche $LAST_TAG"
+            if gh issue list --search "$ISSUE_TITLE" --json title | jq -e ". == []" ; then
               echo "current quiche version $CURRENT_QUICHE_VERSION is not the same as last tag $LAST_TAG create issue"
               gh issue create -t "$ISSUE_TITLE" -b "Bump Quiche version from $CURRENT_QUICHE_VERSION to $LAST_TAG\n * https://github.com/cloudflare/quiche/releases/tag/$LAST_TAG"
             else
