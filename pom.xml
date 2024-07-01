@@ -114,6 +114,16 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+            </manifest>
+            <manifestEntries>
+              <Bundle-License>BSD-2-Clause</Bundle-License>
+            </manifestEntries>
+          </archive>
+        </configuration>
         <executions>
           <execution>
             <id>empty-javadoc-jar</id>
