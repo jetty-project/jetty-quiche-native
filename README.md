@@ -2,7 +2,7 @@
 This project is providing the native builds of the Cloudflare Quiche (https://github.com/cloudflare/quiche) library used by the Jetty Project's HTTP/3 implementation.
 
 ## Current quiche version
-0.21.0
+0.22.0
 
 ## Current targets
  - Linux x86-64
@@ -13,9 +13,9 @@ This project is providing the native builds of the Cloudflare Quiche (https://gi
 
 ## How Quiche was checked out and built
 ```
-git clone --recursive https://github.com/cloudflare/quiche 0.21.0
-cd 0.21.0
-git checkout -b tag-0.21.0 tags/0.21.0
+git clone --recursive https://github.com/cloudflare/quiche 0.22.0
+cd 0.22.0
+git checkout -b tag-0.22.0 tags/0.22.0
 cargo build --features ffi,qlog
 ```
 
