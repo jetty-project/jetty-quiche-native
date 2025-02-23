@@ -16,7 +16,7 @@ pipeline {
           steps {
             mavenBuild( "jdk11", "clean install javadoc:javadoc" )
             // Collect the JaCoCo execution results.
-            recordCoverage name: "Coverage ${jdk}", id: "coverage-${jdk}", tools: [[parser: 'JACOCO']], sourceCodeRetention: 'MODIFIED',
+            recordCoverage name: "Coverage", id: "coverage", tools: [[parser: 'JACOCO']], sourceCodeRetention: 'MODIFIED',
                         sourceDirectories: [[path: 'src/main/java']]
             warnings consoleParsers: [[parserName: 'Maven'], [parserName: 'Java']]
             script {
