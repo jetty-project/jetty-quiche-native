@@ -11,16 +11,13 @@ pipeline {
     stage( "Parallel Stage" ) {
       parallel {
         stage( "Build / Test - JDK11" ) {
-          agent { node { label 'linux' } }
+          agent { node { label 'linux-light' } }
           options { timeout( time: 120, unit: 'MINUTES' ) }
           steps {
             mavenBuild( "jdk11", "clean install javadoc:javadoc" )
-            // Collect up the jacoco execution results
-            jacoco inclusionPattern: '**/org/eclipse/jetty/**/*.class',
-                   exclusionPattern: '',
-                   execPattern: '**/target/jacoco.exec',
-                   classPattern: '**/target/classes',
-                   sourcePattern: '**/src/main/java'
+            // Collect the JaCoCo execution results.
+            recordCoverage name: "Coverage ${jdk}", id: "coverage-${jdk}", tools: [[parser: 'JACOCO']], sourceCodeRetention: 'MODIFIED',
+                        sourceDirectories: [[path: 'src/main/java']]
             warnings consoleParsers: [[parserName: 'Maven'], [parserName: 'Java']]
             script {
             echo "env.BRANCH_NAME:" + env.BRANCH_NAME
