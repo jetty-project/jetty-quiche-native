@@ -15,6 +15,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <njord.autoPublish>true</njord.autoPublish>
+    <njord.version>0.7.1</njord.version>
   </properties>
 
   <licenses>
@@ -33,14 +35,14 @@
 
   <distributionManagement>
     <repository>
-      <id>oss.sonatype.org</id>
-      <name>Jetty Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>sonatype-cp</id>
+      <name>Central Portal</name>
+      <url>https://repo.maven.apache.org/maven2</url>
     </repository>
     <snapshotRepository>
-      <id>oss.sonatype.org</id>
-      <name>Jetty Snapshot Repository</name>
-      <url>https://oss.sonatype.org/content/repositories/jetty-snapshots/</url>
+      <id>sonatype-cp</id>
+      <name>Central Portal</name>
+      <url>https://central.sonatype.com/repository/maven-snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 
@@ -155,6 +157,11 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>eu.maveniverse.maven.plugins</groupId>
+          <artifactId>njord</artifactId>
+          <version>${njord.version}</version>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.5.0</version>
@@ -246,6 +253,14 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <extensions>
+      <extension>
+        <groupId>eu.maveniverse.maven.njord</groupId>
+        <artifactId>extension</artifactId>
+        <version>${njord.version}</version>
+      </extension>
+    </extensions>
   </build>
 
   <developers>
