@@ -19,13 +19,6 @@ pipeline {
             recordCoverage name: "Coverage", id: "coverage", tools: [[parser: 'JACOCO']], sourceCodeRetention: 'MODIFIED',
                         sourceDirectories: [[path: 'src/main/java']]
             warnings consoleParsers: [[parserName: 'Maven'], [parserName: 'Java']]
-            script {
-            echo "env.BRANCH_NAME:" + env.BRANCH_NAME
-              if ( env.BRANCH_NAME == 'main' )
-              {
-                mavenBuild( "jdk11", "deploy" )
-              }
-            }
           }
         }
       }
