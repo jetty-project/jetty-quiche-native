@@ -19,7 +19,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}        
         run: |
           set -x
-          LAST_TAG=$(gh release view -R cloudflare/quiche --json tagName --jq '.tagName')
+          LAST_TAG=$(gh api repos/cloudflare/quiche/tags --paginate --jq '.[].name' | grep -E '^[0-9]+\.[0-9]+(\.[0-9]+)?$' | head -1)
           echo $LAST_TAG
           CURRENT_QUICHE_VERSION=$(grep -A1 "## Current quiche version" README.md|grep -v "## Current quiche version")
           echo $CURRENT_QUICHE_VERSION
